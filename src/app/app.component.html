@@ -1,7 +1,6 @@
 <h1>Download as PDF</h1>
-<div class="container" id="content" #content>
-  <table class="table table-dark">
-    <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()">
+<div class="col-md-8" id="content" #content>
+  <table class="table table-bordered">
     <tr>
       <th>Id</th>
       <th>Name</th>
@@ -17,4 +16,7 @@
     </tr>
 
   </table>
+  <div class="col-md-4 text-right">
+    <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
+  </div>
 </div>
