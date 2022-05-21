@@ -44,15 +44,13 @@ export class AppComponent {
 
   @ViewChild('content') content!: ElementRef;
 
-
-
   public openPDF(): void {
     let DATA: any = document.getElementById('content');
     html2canvas(DATA).then((canvas) => {
       let fileWidth = 400;
-      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+      let fileHeight = 100;
       const FILEURI = canvas.toDataURL('image/png');
-      let PDF = new jspdf('p', 'mm', 'a4');
+      let PDF = new jspdf('l', 'mm', 'a4');
       let position = 0;
       PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
       PDF.save('angular-demo.pdf');
